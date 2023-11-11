@@ -10,7 +10,7 @@ function App() {
   const [ewe, setEwe] = useState();
 
   useEffect(() => {
-    fetch("http://pv-api.onrender.com/data")
+    fetch("https://pv-api.onrender.com/data")
       .then((res) => res.json())
       .then((data) => {
         setTime(data.StatusSNS.Time);
