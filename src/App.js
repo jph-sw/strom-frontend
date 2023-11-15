@@ -13,6 +13,10 @@ function App() {
   const [graphlabels, setGraphLabels] = useState([]);
   const [graphvalues, setGraphValues] = useState([]);
 
+  const date = new Date(time);
+
+  console.log(date);
+
   useEffect(() => {
     fetch("https://pv-api.onrender.com/data")
       .then((res) => res.json())
