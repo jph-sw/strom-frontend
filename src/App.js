@@ -12,18 +12,7 @@ function App() {
   const [datastorage, setDataStorage] = useState();
   const [graphlabels, setGraphLabels] = useState([]);
   const [graphvalues, setGraphValues] = useState([]);
-  let graphdata = {
-    labels: graphlabels,
-    datasets: [
-      {
-        label: "Hours Studied in Geeksforgeeks",
-        data: [2, 5, 7, 9, 7, 6, 4],
-        fill: true,
-        backgroundColor: "rgba(6, 156,51, .3)",
-        borderColor: "#02b844",
-      },
-    ],
-  };
+
   useEffect(() => {
     fetch("https://pv-api.onrender.com/data")
       .then((res) => res.json())
@@ -42,7 +31,7 @@ function App() {
         let values = [];
         data.forEach((element) => {
           dates.push(element.date);
-          values.push(element.ewe.curr_w2);
+          values.push(element.ewe);
         });
         console.log("dates", values);
         setGraphLabels(dates);
